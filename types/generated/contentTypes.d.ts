@@ -620,7 +620,10 @@ export interface ApiDiningDining extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    additionalDining: Schema.Attribute.Component<'blocks.content-list', false>;
+    contentHighlight: Schema.Attribute.Component<
+      'elements.general-card',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -663,6 +666,10 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
+    contentHighlight: Schema.Attribute.Component<
+      'elements.general-card',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -671,9 +678,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     eventNotice: Schema.Attribute.Component<'elements.text-module', false>;
     eventSchedule: Schema.Attribute.Component<'blocks.schedule-details', false>;
     eventStatus: Schema.Attribute.Enumeration<['active', 'draft', 'expired']>;
-    featuredImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
+    featuredImage: Schema.Attribute.Media<'images'>;
     gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -796,12 +801,17 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     featuredList: Schema.Attribute.Component<'blocks.content-list', false>;
     hero: Schema.Attribute.Component<'blocks.hero', false>;
+    hiddenSlug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'homePage'>;
     imageContent: Schema.Attribute.Component<'blocks.image-content', true>;
     imageFeatureGrid: Schema.Attribute.Component<
       'blocks.image-feature-grid',
       false
     >;
-    includeInPageDirectory: Schema.Attribute.Boolean;
+    includeInPageDirectory: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -811,7 +821,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     newsletter: Schema.Attribute.Component<'blocks.news-letter-signup', false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -868,6 +878,9 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'elements.link', false>;
+    hiddenSlug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
@@ -926,19 +939,18 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    contentHighlight: Schema.Attribute.Component<
+      'elements.general-card',
+      false
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'elements.link', true>;
     description: Schema.Attribute.Blocks;
     email: Schema.Attribute.String;
-    featuredImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
-    gallery: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    featuredImage: Schema.Attribute.Media<'images'>;
+    gallery: Schema.Attribute.Media<'images' | 'videos', true>;
     imageContent: Schema.Attribute.Component<'blocks.image-content', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -950,7 +962,10 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     phone: Schema.Attribute.String;
     pricing: Schema.Attribute.Component<'blocks.pricing-section', false>;
     publishedAt: Schema.Attribute.DateTime;
-    serviceDetails: Schema.Attribute.Component<'blocks.featured-events', true>;
+    serviceDetails: Schema.Attribute.Component<
+      'elements.details-section',
+      false
+    >;
     slug: Schema.Attribute.UID<'title'>;
     testimonals: Schema.Attribute.Relation<
       'oneToMany',

@@ -35,7 +35,6 @@ export interface BlocksFaq extends Struct.ComponentSchema {
     displayName: 'faq';
   };
   attributes: {
-    appearance: Schema.Attribute.Component<'elements.appearance', false>;
     faq: Schema.Attribute.Component<'elements.faq', true>;
     title: Schema.Attribute.String;
   };
@@ -380,6 +379,17 @@ export interface ElementsCopySection extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsDetailsSection extends Struct.ComponentSchema {
+  collectionName: 'components_elements_details_sections';
+  info: {
+    displayName: 'Details Section';
+  };
+  attributes: {
+    detailItem: Schema.Attribute.Component<'blocks.featured-events', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementsFaq extends Struct.ComponentSchema {
   collectionName: 'components_elements_faqs';
   info: {
@@ -400,6 +410,27 @@ export interface ElementsFeatureCards extends Struct.ComponentSchema {
     cta: Schema.Attribute.Component<'elements.link', false>;
     description: Schema.Attribute.Text;
     media: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsGeneralCard extends Struct.ComponentSchema {
+  collectionName: 'components_elements_general_cards';
+  info: {
+    displayName: 'General Card';
+  };
+  attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['dining', 'event', 'service', 'shop']
+    > &
+      Schema.Attribute.Required;
+    cta: Schema.Attribute.Component<'elements.link', false>;
+    description: Schema.Attribute.String;
+    dinings: Schema.Attribute.Relation<'oneToMany', 'api::dining.dining'>;
+    events: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    preTitle: Schema.Attribute.String;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
+    shops: Schema.Attribute.Relation<'oneToMany', 'api::shop.shop'>;
     title: Schema.Attribute.String;
   };
 }
@@ -541,8 +572,10 @@ declare module '@strapi/strapi' {
       'elements.appearance': ElementsAppearance;
       'elements.coordinates': ElementsCoordinates;
       'elements.copy-section': ElementsCopySection;
+      'elements.details-section': ElementsDetailsSection;
       'elements.faq': ElementsFaq;
       'elements.feature-cards': ElementsFeatureCards;
+      'elements.general-card': ElementsGeneralCard;
       'elements.link': ElementsLink;
       'elements.meta': ElementsMeta;
       'elements.pricing-plan': ElementsPricingPlan;

@@ -12,14 +12,21 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid"
     },
     "includeInPageDirectory": {
-      "type": "boolean"
-      
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "hiddenSlug": {
+      "type": "string",
+      "default": "homePage",
+      "required": true
     },
     "hero": {
       "type": "component",

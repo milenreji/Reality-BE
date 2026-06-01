@@ -61,9 +61,9 @@
       "component": "elements.meta",
       "repeatable": true
     },
-    "additionalDining": {
+    "contentHighlight": {
       "type": "component",
-      "component": "blocks.content-list",
+      "component": "elements.general-card",
       "repeatable": false
     }
   }

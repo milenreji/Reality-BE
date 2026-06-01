@@ -18,6 +18,11 @@
       "type": "uid",
       "targetField": "title"
     },
+    "hiddenSlug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
     "cta": {
       "type": "component",
       "component": "elements.link",

@@ -1,16 +1,16 @@
 {
-  "collectionName": "components_blocks_faqs",
+  "collectionName": "components_elements_details_sections",
   "info": {
-    "displayName": "faq"
+    "displayName": "Details Section"
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "faq": {
+    "detailItem": {
       "type": "component",
-      "component": "elements.faq",
+      "component": "blocks.featured-events",
       "repeatable": true
     }
   },

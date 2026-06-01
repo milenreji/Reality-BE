@@ -15,10 +15,7 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
     "title": {
@@ -52,20 +49,18 @@
       "multiple": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "videos"
       ]
+    },
+    "serviceDetails": {
+      "type": "component",
+      "component": "elements.details-section",
+      "repeatable": false
     },
     "pricing": {
       "type": "component",
       "component": "blocks.pricing-section",
       "repeatable": false
-    },
-    "serviceDetails": {
-      "type": "component",
-      "component": "blocks.featured-events",
-      "repeatable": true
     },
     "imageContent": {
       "type": "component",
@@ -77,6 +72,12 @@
       "relation": "oneToMany",
       "target": "api::testimonal.testimonal",
       "mappedBy": "service"
+    },
+   
+    "contentHighlight": {
+      "type": "component",
+      "component": "elements.general-card",
+      "repeatable": false
     }
   }
 }

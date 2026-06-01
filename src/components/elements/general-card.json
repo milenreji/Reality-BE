@@ -1,0 +1,94 @@
+{
+  "collectionName": "components_elements_general_cards",
+  "info": {
+    "displayName": "General Card"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "dining",
+        "event",
+        "service",
+        "shop"
+      ]
+    },
+    "dinings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dining.dining",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "dining"
+          ]
+        }
+      }
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "event"
+          ]
+        }
+      }
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "service"
+          ]
+        }
+      }
+    },
+    "shops": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shop.shop",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "category"
+            },
+            "shop"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}
