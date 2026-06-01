@@ -1,0 +1,72 @@
+{
+  "collectionName": "components_blocks_image_contents",
+  "info": {
+    "displayName": "Image Content"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "isReversed": {
+      "type": "boolean"
+    },
+    "showListItems": {
+      "type": "boolean"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "listTitle": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "showListItems"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "listItems": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "showListItems"
+            },
+            true
+          ]
+        }
+      },
+      "component": "elements.copy-section",
+      "repeatable": true
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

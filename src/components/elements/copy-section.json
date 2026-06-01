@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_copy_sections",
+  "info": {
+    "displayName": "Copy Section"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

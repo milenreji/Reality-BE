@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_blocks_split_contents",
+  "info": {
+    "displayName": "Split Content"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "elements.split-content-item",
+      "repeatable": true
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

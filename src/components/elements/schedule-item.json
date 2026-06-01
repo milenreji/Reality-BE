@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_schedule_items",
+  "info": {
+    "displayName": "Schedule Item"
+  },
+  "options": {},
+"attributes": {
+    "title": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    }
+  },
+    "config": {}
+}
+
+
+ 

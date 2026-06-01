@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_image_feature_grids",
+  "info": {
+    "displayName": "Image Feature Grid"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "elements.feature-cards",
+      "repeatable": true
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

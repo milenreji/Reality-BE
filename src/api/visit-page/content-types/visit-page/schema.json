@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "visit_pages",
+  "info": {
+    "singularName": "visit-page",
+    "pluralName": "visit-pages",
+    "displayName": "Visit Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": false
+    },
+    "quickInfo": {
+      "type": "component",
+      "component": "blocks.section-intro",
+      "repeatable": false
+    },
+    "featuredContent": {
+      "type": "component",
+      "component": "blocks.split-content",
+      "repeatable": false
+    },
+    "mapSection": {
+      "type": "component",
+      "component": "blocks.map",
+      "repeatable": false
+    },
+    "faq": {
+      "type": "component",
+      "component": "blocks.faq",
+      "repeatable": false
+    },
+    "contactCallout": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false
+    }
+  }
+}

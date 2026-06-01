@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_featured_events",
+  "info": {
+    "displayName": "Featured Events"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

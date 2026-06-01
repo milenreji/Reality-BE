@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_headings",
+  "info": {
+    "displayName": "Heading"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

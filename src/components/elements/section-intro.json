@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_elements_section_intros",
+  "info": {
+    "displayName": "Section Intro"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

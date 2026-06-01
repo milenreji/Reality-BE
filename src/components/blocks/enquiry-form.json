@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_enquiry_forms",
+  "info": {
+    "displayName": "Enquiry Form"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+   "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_blocks_content_lists",
+  "info": {
+    "displayName": "Content List"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "itemType": {
+      "type": "enumeration",
+      "default": "events",
+      "enum": [
+        "events",
+        "dining"
+      ]
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "itemType"
+            },
+            "events"
+          ]
+        }
+      }
+    },
+    "dinings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dining.dining",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "itemType"
+            },
+            "dining"
+          ]
+        }
+      }
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_schedule_details",
+  "info": {
+    "displayName": "Schedule Details"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "scheduleItems": {
+      "type": "component",
+      "component": "elements.schedule-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_blocks_feature_contents",
+  "info": {
+    "displayName": "Feature Content"
+  },
+  "options": {},
+  "attributes": {
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "infoTitle": {
+      "type": "string"
+    },
+    "infoSummary": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "metaData": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

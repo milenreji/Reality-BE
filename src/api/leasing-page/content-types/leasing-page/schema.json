@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "leasing_pages",
+  "info": {
+    "singularName": "leasing-page",
+    "pluralName": "leasing-pages",
+    "displayName": "Leasing Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": false
+    },
+    "contentWithForm": {
+      "type": "component",
+      "component": "blocks.split-enquiry-content",
+      "repeatable": false
+    },
+    "textBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false
+    }
+  }
+}

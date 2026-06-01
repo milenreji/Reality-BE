@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "deal_pages",
+  "info": {
+    "singularName": "deal-page",
+    "pluralName": "deal-pages",
+    "displayName": "Deal Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": false
+    },
+    "titleBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false
+    }
+  }
+}

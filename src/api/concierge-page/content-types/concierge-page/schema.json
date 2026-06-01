@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "concierge_pages",
+  "info": {
+    "singularName": "concierge-page",
+    "pluralName": "concierge-pages",
+    "displayName": "Concierge Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": false
+    },
+    "conciergeCard": {
+      "type": "component",
+      "component": "blocks.image-content-card",
+      "repeatable": false
+    },
+    "titleBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false
+    },
+    "imageContent": {
+      "type": "component",
+      "component": "blocks.image-content",
+      "repeatable": true
+    },
+    "teamSection": {
+      "type": "component",
+      "component": "blocks.team-grid",
+      "repeatable": false
+    }
+  }
+}

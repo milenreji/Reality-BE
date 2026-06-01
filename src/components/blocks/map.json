@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_maps",
+  "info": {
+    "displayName": "Map"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "coordinates": {
+      "type": "component",
+      "component": "elements.coordinates",
+      "repeatable": false
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

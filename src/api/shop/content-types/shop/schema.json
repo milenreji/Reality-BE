@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shops",
+  "info": {
+    "singularName": "shop",
+    "pluralName": "shops",
+    "displayName": "Shop"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "metaData": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "featured": {
+      "type": "component",
+      "component": "blocks.image-feature-grid",
+      "repeatable": false
+    },
+    "testimonals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonal.testimonal"
+    },
+    "storeDetails": {
+      "type": "component",
+      "component": "blocks.featured-events",
+      "repeatable": true
+    }
+  }
+}

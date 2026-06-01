@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_blocks_heroes",
+  "info": {
+    "displayName": "hero"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hero-carousel.hero-carousel"
+    },
+    "isHeroSlide": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "slideInterval": {
+      "type": "integer",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isHeroSlide"
+            },
+            true
+          ]
+        }
+      },
+      "default": 3,
+      "min": 3,
+      "max": 10
+    }
+  },
+  "config": {}
+}

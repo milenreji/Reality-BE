@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "metaData": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pricing": {
+      "type": "component",
+      "component": "blocks.pricing-section",
+      "repeatable": false
+    },
+    "serviceDetails": {
+      "type": "component",
+      "component": "blocks.featured-events",
+      "repeatable": true
+    },
+    "imageContent": {
+      "type": "component",
+      "component": "blocks.image-content",
+      "repeatable": false
+    },
+    "testimonals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonal.testimonal",
+      "mappedBy": "service"
+    }
+  }
+}

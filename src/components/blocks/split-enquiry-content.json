@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_blocks_split_enquiry_contents",
+  "info": {
+    "displayName": "Split Enquiry Content"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "quote": {
+      "type": "component",
+      "component": "elements.quote",
+      "repeatable": false
+    },
+    "advantagesPreTitle": {
+      "type": "string"
+    },
+    "advantages": {
+      "type": "component",
+      "component": "elements.section-intro",
+      "repeatable": true
+    },
+    "form": {
+      "type": "component",
+      "component": "blocks.enquiry-form",
+      "repeatable": false,
+      "required": true
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

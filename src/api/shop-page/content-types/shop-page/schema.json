@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "shop_pages",
+  "info": {
+    "singularName": "shop-page",
+    "pluralName": "shop-pages",
+    "displayName": "Shop Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "hero": {
+      "type": "component",
+      "component": "blocks.hero",
+      "repeatable": false
+    },
+    "featuredContent": {
+      "type": "component",
+      "component": "blocks.feature-content",
+      "repeatable": false
+    },
+    "titleBlock": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": false
+    }
+  
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_blocks_image_content_cards",
+  "info": {
+    "displayName": "Image Content Card"
+  },
+  "options": {},
+  "attributes": {
+    "services": {
+      "type": "component",
+      "component": "elements.section-intro",
+      "repeatable": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "infoTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "metaData": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

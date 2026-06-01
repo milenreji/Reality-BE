@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dinings",
+  "info": {
+    "singularName": "dining",
+    "pluralName": "dinings",
+    "displayName": "Dining"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "metaData": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "eventSchedule": {
+      "type": "component",
+      "component": "blocks.featured-events",
+      "repeatable": true
+    },
+    "features": {
+      "type": "component",
+      "component": "elements.meta",
+      "repeatable": true
+    },
+    "additionalDining": {
+      "type": "component",
+      "component": "blocks.content-list",
+      "repeatable": false
+    }
+  }
+}

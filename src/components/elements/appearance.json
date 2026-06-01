@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_elements_appearances",
+  "info": {
+    "displayName": "Appearance",
+    "icon": "brush"
+  },
+  "options": {},
+  "attributes": {
+    "isVisible": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "bgColor": {
+      "type": "enumeration",
+      "required": true,
+      "default": "white",
+      "enum": [
+        "white",
+        "stone",
+        "grey",
+        "green"
+      ]
+    },
+    "paddingTop": {
+      "type": "enumeration",
+      "required": true,
+      "default": "space_0",
+      "enum": [
+        "space_0",
+        "space_32",
+        "space_64",
+        "space_72",
+        "space_80",
+        "space_96",
+        "space_128",
+        "space_160",
+        "space_192"
+      ]
+    },
+    "paddingBottom": {
+      "type": "enumeration",
+      "required": true,
+      "default": "space_96",
+      "enum": [
+        "space_0",
+        "space_32",
+        "space_64",
+        "space_72",
+        "space_80",
+        "space_96",
+        "space_128",
+        "space_160",
+        "space_192"
+      ]
+    }
+  },
+  "config": {}
+}

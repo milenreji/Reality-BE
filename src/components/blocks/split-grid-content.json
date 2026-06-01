@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_blocks_split_grid_contents",
+  "info": {
+    "displayName": "Split Grid Content"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "elements.feature-cards",
+      "repeatable": true
+    },
+    "preTitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "isCtaRequired": {
+      "type": "boolean",
+      "default": false
+    },
+    "cta": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true,
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isCtaRequired"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "appearance": {
+      "type": "component",
+      "component": "elements.appearance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
