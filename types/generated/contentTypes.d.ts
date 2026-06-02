@@ -863,6 +863,71 @@ export interface ApiLeasingPageLeasingPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMapPageMapPage extends Struct.SingleTypeSchema {
+  collectionName: 'map_pages';
+  info: {
+    displayName: 'Map Page';
+    pluralName: 'map-pages';
+    singularName: 'map-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featureCard: Schema.Attribute.Component<'blocks.text-block', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::map-page.map-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMoviePageMoviePage extends Struct.SingleTypeSchema {
+  collectionName: 'movie_pages';
+  info: {
+    displayName: 'Movie Page';
+    pluralName: 'movie-pages';
+    singularName: 'movie-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'blocks.hero', false>;
+    imageFeatureGrid: Schema.Attribute.Component<
+      'blocks.image-feature-grid',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::movie-page.movie-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    textBlock: Schema.Attribute.Component<'blocks.text-block', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -911,6 +976,7 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
       'blocks.split-grid-content',
       false
     >;
+    featuredList: Schema.Attribute.Component<'blocks.text-block', false>;
     hero: Schema.Attribute.Component<'blocks.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -918,6 +984,7 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
       'api::press-page.press-page'
     > &
       Schema.Attribute.Private;
+    pressInquiries: Schema.Attribute.Component<'blocks.feature-content', false>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     textBlock: Schema.Attribute.Component<'blocks.text-block', false>;
@@ -1714,6 +1781,8 @@ declare module '@strapi/strapi' {
       'api::hero-carousel.hero-carousel': ApiHeroCarouselHeroCarousel;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::leasing-page.leasing-page': ApiLeasingPageLeasingPage;
+      'api::map-page.map-page': ApiMapPageMapPage;
+      'api::movie-page.movie-page': ApiMoviePageMoviePage;
       'api::page.page': ApiPagePage;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::service.service': ApiServiceService;

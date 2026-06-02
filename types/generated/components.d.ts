@@ -47,6 +47,7 @@ export interface BlocksFeatureContent extends Struct.ComponentSchema {
   };
   attributes: {
     appearance: Schema.Attribute.Component<'elements.appearance', false>;
+    contactItems: Schema.Attribute.Component<'elements.contact-item', true>;
     cta: Schema.Attribute.Component<'elements.link', true>;
     description: Schema.Attribute.Blocks;
     infoSummary: Schema.Attribute.Component<'elements.meta', false>;
@@ -54,6 +55,8 @@ export interface BlocksFeatureContent extends Struct.ComponentSchema {
     media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     metaData: Schema.Attribute.Component<'elements.meta', true>;
     preTitle: Schema.Attribute.String;
+    showContactItems: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     title: Schema.Attribute.String;
   };
 }
@@ -342,6 +345,19 @@ export interface ElementsAppearance extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsContactItem extends Struct.ComponentSchema {
+  collectionName: 'components_elements_contact_items';
+  info: {
+    displayName: 'Contact Item';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    subText: Schema.Attribute.String;
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ElementsCoordinates extends Struct.ComponentSchema {
   collectionName: 'elements_coordinates';
   info: {
@@ -570,6 +586,7 @@ declare module '@strapi/strapi' {
       'blocks.team-grid': BlocksTeamGrid;
       'blocks.text-block': BlocksTextBlock;
       'elements.appearance': ElementsAppearance;
+      'elements.contact-item': ElementsContactItem;
       'elements.coordinates': ElementsCoordinates;
       'elements.copy-section': ElementsCopySection;
       'elements.details-section': ElementsDetailsSection;

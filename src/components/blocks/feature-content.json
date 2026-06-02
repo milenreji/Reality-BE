@@ -27,6 +27,25 @@
       "component": "elements.meta",
       "repeatable": true
     },
+    "showContactItems": {
+      "type": "boolean",
+      "default": false
+    },
+    "contactItems": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "showContactItems"
+            },
+            true
+          ]
+        }
+      },
+      "component": "elements.contact-item",
+      "repeatable": true
+    },
     "media": {
       "type": "media",
       "multiple": false,

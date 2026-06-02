@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "map_pages",
+  "info": {
+    "singularName": "map-page",
+    "pluralName": "map-pages",
+    "displayName": "Map Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "featureCard": {
+      "type": "component",
+      "component": "blocks.text-block",
+      "repeatable": true
+    }
+  }
+}

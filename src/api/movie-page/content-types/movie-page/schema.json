@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "press_pages",
+  "collectionName": "movie_pages",
   "info": {
-    "singularName": "press-page",
-    "pluralName": "press-pages",
-    "displayName": "Press Page"
+    "singularName": "movie-page",
+    "pluralName": "movie-pages",
+    "displayName": "Movie Page"
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +12,8 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
       "type": "uid",
@@ -23,24 +24,14 @@
       "component": "blocks.hero",
       "repeatable": false
     },
-    "featuredContent": {
-      "type": "component",
-      "component": "blocks.split-grid-content",
-      "repeatable": false
-    },
     "textBlock": {
       "type": "component",
       "component": "blocks.text-block",
       "repeatable": false
     },
-    "featuredList": {
+    "imageFeatureGrid": {
       "type": "component",
-      "component": "blocks.text-block",
-      "repeatable": false
-    },
-    "pressInquiries": {
-      "type": "component",
-      "component": "blocks.feature-content",
+      "component": "blocks.image-feature-grid",
       "repeatable": false
     }
   }
